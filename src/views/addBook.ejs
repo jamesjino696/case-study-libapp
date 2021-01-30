@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="/css/styles.css" rel="stylesheet">
+  
+  </head>
+	<body>
+
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- navbar -->
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <a href="#" class="navbar-brand">LibraryApp</a>
+            <%for(i=0;i<nav.length-2;i++){%>
+              <li>
+                <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+              </li>
+            <%}%>
+            <%i++%>
+            <li>
+              <a href="<%=nav[i].link%>" id="logins"><%=nav[i].name%></a>
+            </li>
+          </ul>
+          <ul class="nav navbar-right navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+              <ul class="dropdown-menu" style="padding:12px;">
+                <form class="form-inline">
+                  <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+                </form>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="masthead">  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1><%=title%>
+              <p class="lead"></p>
+            </h1>
+          </div>
+          <div class="col-md-5">
+            <div class="well well-lg"> 
+              <div class="row">
+                <div class="col-sm-12">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+    <!-- /cont -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="top-spacer"> </div>
+        </div>
+      </div> 
+    </div>
+    <!-- /cont -->
+    
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"> 
+          <div class="panel">
+            <div class="panel-body">
+            
+            <!--Form-->
+            <form method="POST" class="col-lg-8 upform" action="/books/add" enctype="multipart/form-data">
+              <div class="mb-3">
+                  <label for="exampleInputName" class="form-label">Title</label>
+                  <input type="text" name="title" class="form-control" id="booktitle" required>
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputName" class="form-label">Author</label>
+                  <input type="text" name="author" class="form-control" id="bookauthor" required>
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputName" class="form-label">Genre</label>
+                  <select name="genre" class="form-control" aria-label="Default select example" id="bookgenre">
+                      <option selected value="Novel">Novel</option>
+                      <option value="Fiction">Fiction</option>
+                      <option value="Autobiography">Autobiography</option>
+                      <option value="Non-fiction">Non-fiction</option>
+                      <option value="Short stories">Short stories</option>
+                      <option value="Atlases">Atlases</option>
+                      <option value="Poetry">Poetry</option>
+                      <option value="Article">Article</option>
+                      <option value="Dictionary">Dictionary</option>
+                      <option value="Biography">Biography</option>
+                      <option value="Fantasy">Fantasy</option>
+                      <option value="Adventure">Adventure</option>
+                      <option value="Ohters">Ohters</option>
+                  </select>
+                  <div id="emailHelp" class="form-text">eg:- Novel,Autobiography,Fiction,etc.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Image</label>
+                <input type="file" name="image" class="form-control" id="bookimg" required>
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputName" class="form-label">About</label>
+                  <textarea name="about" class="form-control is-invalid" id="bookabout" placeholder="Write something about this book" required></textarea>
+              </div>
+              <br>
+              <div class="mb-3">
+                  <button type="submit" class="btn btn-primary" id="up-btn">Add Book</button>
+              </div>
+            </form>
+            <!--/Form-->
+            
+            </div>
+          </div>                                          
+        </div>
+        <!--/col-12-->
+      </div>
+    </div>
+                                                  
+                                                                                  
+    <hr>
+
+    <div class="container" id="footer">
+      <div class="row">
+        <div class="col col-sm-12">
+          <h1>Follow Us</h1>
+          <div class="btn-group">
+          <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+          <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+          <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <hr>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <ul class="list-inline">
+              <li><i class="icon-facebook icon-2x"></i></li>
+              <li><i class="icon-twitter icon-2x"></i></li>
+              <li><i class="icon-google-plus icon-2x"></i></li>
+              <li><i class="icon-pinterest icon-2x"></i></li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+              <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
